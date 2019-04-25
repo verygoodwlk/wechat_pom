@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    config:
+      name: application
+      profile: gateway
+      uri: http://localhost:12000
+
+
+
+
+
