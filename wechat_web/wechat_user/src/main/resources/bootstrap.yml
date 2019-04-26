@@ -4,13 +4,3 @@ spring:
       name: application
       profile: user
       uri: http://localhost:12000
-  datasource:
-    url: jdbc:mysql:///wechat1810
-    username: root
-    password: root
-    driver-class-name: com.mysql.jdbc.Driver
-
-
-
-
-

@@ -1,5 +1,5 @@
 server:
-  port: 6666
+  port: 16666
 
 spring:
   application:
@@ -9,8 +9,21 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
+  servlet:
+    multipart:
+      max-request-size: 30MB
+      max-file-size: 30MB
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8080/eureka
+fdfs:
+  connect-timeout: 6000
+  pool:
+    jmx-enabled: false
+  thumb-image:
+    width: 80
+    height: 80
+  tracker-list:
+    - 47.112.207.98:22122
