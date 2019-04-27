@@ -58,4 +58,30 @@ public class UserController {
 
         }
     }
+
+    /**
+     * 根据用户名查询用户信息
+     * @param username
+     * @return
+     */
+    @RequestMapping("/queryByUserName")
+    public ResultData<User> query(String username){
+        User user = userService.queryByUserName(username);
+        if(user != null){
+            //查询成功
+            return ResultData.createSuccResultData(user);
+        }
+
+        return ResultData.createErrorResultData("1007", "该账号信息不存在！");
+    }
+
+    /**
+     * 根据用户id查询用户信息
+     * @param id
+     * @return
+     */
+    @RequestMapping("/queryById")
+    public User queryById(int id){
+        return userService.queryById(id);
+    }
 }

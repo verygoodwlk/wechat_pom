@@ -8,5 +8,7 @@ public interface IUserService {
 
     User queryByUserName(String username);
 
+    User queryById(int id);
+
     int updateHeaderByUid(int uid, String header, String headerCrm);
 }

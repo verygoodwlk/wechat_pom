@@ -6,13 +6,13 @@ import com.github.tobato.fastdfs.service.FastFileStorageClient;
 import com.qf.dao.UserMapper;
 import com.qf.entity.User;
 import com.qf.service.IUserService;
+import com.qf.util.PinyinUtils;
 import com.qf.util.QRCodeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 
 @Service
 public class UserServiceImpl implements IUserService {
@@ -75,6 +75,8 @@ public class UserServiceImpl implements IUserService {
         }
 
         //TODO 根据昵称生成拼音
+        String pinyin = PinyinUtils.nickname2Pinyin(user.getNickname());
+        user.setPinyin(pinyin);
 
         //TODO 密码MD5加密
 
@@ -86,6 +88,11 @@ public class UserServiceImpl implements IUserService {
         QueryWrapper queryWrapper = new QueryWrapper();
         queryWrapper.eq("username", username);
         return userMapper.selectOne(queryWrapper);
+    }
+
+    @Override
+    public User queryById(int id) {
+        return userMapper.selectById(id);
     }
 
     @Override
