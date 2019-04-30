@@ -1,5 +1,9 @@
 netty:
-  ip: 10.36.137.135
+  ip: 10.36.137.138
   port: 20000
 zk:
   host: 47.112.207.98:2181
+spring:
+  redis:
+    host: 192.168.227.130
+    password: root
