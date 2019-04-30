@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    config:
+      name: application
+      profile: chat
+      uri: http://localhost:12000
+zk:
+  host: 47.112.207.98:2181

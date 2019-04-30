@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:mysql:///wechat1810
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: chat
+server:
+  port: 18888
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka
