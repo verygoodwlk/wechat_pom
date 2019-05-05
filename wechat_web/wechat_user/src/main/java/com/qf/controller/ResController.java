@@ -62,4 +62,32 @@ public class ResController {
 
         return ResultData.createErrorResultData("1006", "图片上传失败！");
     }
+
+
+    /**
+     * 上传音频
+     * @return
+     */
+    @RequestMapping("/uploadAudio")
+    public ResultData<String> uploadAudio(MultipartFile file){
+
+        //上传图片到fastdfs
+        try {
+            StorePath path = fastFileStorageClient.uploadFile(
+                    file.getInputStream(),
+                    file.getSize(),
+                    "AMR",
+                    null);
+
+
+            //获得上传后的大图路径
+            String resultPath = path.getFullPath();
+
+            return ResultData.createSuccResultData(resultPath);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return ResultData.createErrorResultData("1006", "音频上传失败！");
+    }
 }
