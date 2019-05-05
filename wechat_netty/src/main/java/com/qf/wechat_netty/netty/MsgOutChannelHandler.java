@@ -20,6 +20,7 @@ public class MsgOutChannelHandler extends ChannelOutboundHandlerAdapter {
         if(msg instanceof WsMsg) {
             //提前处理msg
             String json = JSON.toJSONString(msg);
+            System.out.println("发送出去的消息：" + json);
             msg = new TextWebSocketFrame(json);
         }
 

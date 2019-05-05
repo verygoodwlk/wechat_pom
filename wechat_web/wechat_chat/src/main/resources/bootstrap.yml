@@ -4,5 +4,10 @@ spring:
       name: application
       profile: chat
       uri: http://localhost:12000
+  rabbitmq:
+    host: 192.168.227.130
+    username: admin
+    password: admin
+    virtual-host: /admin
 zk:
-  host: 47.112.207.98:2181
+  host: 192.168.227.130:2181
